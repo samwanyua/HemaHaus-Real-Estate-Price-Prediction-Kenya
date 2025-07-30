@@ -11,5 +11,6 @@ CREATE TABLE IF NOT EXISTS raw_listings (
     size TEXT,
     source TEXT,
     page INT,
+    url TEXT,
     inserted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

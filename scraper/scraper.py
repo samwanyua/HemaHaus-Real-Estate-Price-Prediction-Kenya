@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import time
-from database.db import get_connection
+from database.init_db import get_connection
 
 headers = {"User-Agent": "Mozilla/5.0"}
 
@@ -104,7 +104,7 @@ def save_to_postgres(listings):
     cur = conn.cursor()
     for l in listings:
         cur.execute("""
-            INSERT INTO property_listings 
+            INSERT INTO raw_listings 
             (title, price, location, address, description, bedrooms, bathrooms, parking, size, source, page, url)
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """, (
