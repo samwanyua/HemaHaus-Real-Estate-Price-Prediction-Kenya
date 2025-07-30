@@ -1,0 +1,30 @@
+# Core
+pandas
+numpy
+scikit-learn
+joblib
+
+# Web Framework
+fastapi
+uvicorn
+
+# Frontend
+streamlit
+
+# AWS and Cloud (optional, for future use)
+# boto3
+
+# Database
+psycopg2-binary
+sqlalchemy
+
+# Geocoding (optional)
+geopy
+
+# Data Scraping (if scraping real estate websites)
+beautifulsoup4
+requests
+lxml
+
+# Environment variables
+python-dotenv
