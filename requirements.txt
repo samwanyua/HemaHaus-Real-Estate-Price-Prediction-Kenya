@@ -17,6 +17,7 @@ streamlit
 # Database
 psycopg2-binary
 sqlalchemy
+psycopg2
 
 # Geocoding (optional)
 geopy
