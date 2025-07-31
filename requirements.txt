@@ -6,6 +6,7 @@ joblib
 seaborn
 matplotlib
 plotly
+xgboost
 
 # Web Framework
 fastapi
