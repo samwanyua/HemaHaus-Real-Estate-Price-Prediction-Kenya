@@ -3,6 +3,8 @@ pandas
 numpy
 scikit-learn
 joblib
+seaborn
+matplotlib
 
 # Web Framework
 fastapi
