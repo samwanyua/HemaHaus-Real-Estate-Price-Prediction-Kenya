@@ -71,9 +71,7 @@ with col2:
     st.metric(label="Avg. Price per Sqm", value=f"KES {avg_price_per_sqm:,.0f}/sqm" if avg_price_per_sqm else "N/A")
     st.metric(label="Median Bedrooms", value=f"{int(median_bedrooms)}" if median_bedrooms else "N/A")
 
-  
-
-
+    
 # ────────────────────────────
 #  Column 3: Price Distribution
 # ────────────────────────────
@@ -103,6 +101,8 @@ with col3:
         st.plotly_chart(fig_bar, use_container_width=True)
     else:
         st.info("No data to display for selected filters.")
+
+    
 
 
 # ────────────────────────────
