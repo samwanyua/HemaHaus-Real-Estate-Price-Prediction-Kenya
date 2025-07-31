@@ -11,6 +11,7 @@ conn = psycopg2.connect(
     user=os.getenv("DB_USER", "postgres"),
     password=os.getenv("DB_PASSWORD", "postgres"),
     host=os.getenv("HOST", "localhost"),
+    port = os.getenv("PORT", "5434")
 )
 
 query = "SELECT * FROM raw_listings;"
