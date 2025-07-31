@@ -5,6 +5,7 @@ scikit-learn
 joblib
 seaborn
 matplotlib
+plotly
 
 # Web Framework
 fastapi
