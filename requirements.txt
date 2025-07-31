@@ -17,7 +17,6 @@ streamlit
 # boto3
 
 # Database
-psycopg2-binary
 sqlalchemy
 psycopg2
 
