@@ -42,7 +42,7 @@ HemaHaus solves this by scraping real estate data, building machine learning mod
 - **Backend**: Python, FastAPI
 - **Frontend**: Streamlit
 - **Storage**: Postgres, Amazon S3 (future)
-- **Database**: PostgreSQL/MySQL (scalable setup)
+- **Database**: PostgreSQL (scalable setup)
 - **ML Libraries**: Scikit-learn, Pandas, NumPy, XGBoost
 
 ---
