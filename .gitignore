@@ -1,5 +1,5 @@
 env/
 .env
 # Ignore model binaries
-models/
+models/tuned_random_forest_model.pkl
 

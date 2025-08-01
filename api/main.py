@@ -4,20 +4,40 @@ import numpy as np
 import pandas as pd
 import joblib
 import os
+import gdown
 
 app = FastAPI()
 
-# load model
-model_path = os.path.join("models", "tuned_random_forest_model.pkl")
-model = joblib.load(model_path)
-scaler_path = os.path.join("models", "scaler.pkl")
-scaler = joblib.load(scaler_path)
+# --- Helper function to download from Google Drive ---
+def download_from_gdrive(file_id, output_path):
+    url = f"https://drive.google.com/uc?id={file_id}"
+    gdown.download(url, output_path, quiet=False)
 
-loc_path = os.path.join("models", "location_columns.pkl")
+# --- File IDs and paths ---
+model_id = "1Ji6fV483psbeDW7BrOWEGHEbaiBdSPWV"
+scaler_id = "1cVmJk8__YsW4ts9gb0uiP4g3r9E3Pe_D"
+loc_id = "16sMvNl12SrnSl6eVpSjkN0OU5lly84jV"
+
+os.makedirs("models", exist_ok=True)
+model_path = "models/tuned_random_forest_model.pkl"
+scaler_path = "models/scaler.pkl"
+loc_path = "models/location_columns.pkl"
+
+# --- Download files if missing ---
+if not os.path.exists(model_path):
+    download_from_gdrive(model_id, model_path)
+if not os.path.exists(scaler_path):
+    download_from_gdrive(scaler_id, scaler_path)
+if not os.path.exists(loc_path):
+    download_from_gdrive(loc_id, loc_path)
+
+# --- Load models ---
+model = joblib.load(model_path)
+scaler = joblib.load(scaler_path)
 with open(loc_path, "rb") as f:
     location_columns = joblib.load(f)
 
-# Input schema
+# --- Input schema ---
 class HouseFeatures(BaseModel):
     location: str
     bedrooms: int
@@ -27,11 +47,10 @@ class HouseFeatures(BaseModel):
 
 @app.get("/")
 def read_root():
-    return {"message": "HemaHause Real Estate Price Prediction API"}
+    return {"message": "HemaHaus Real Estate Price Prediction API"}
 
 @app.post("/predict")
 def predict_price(features: HouseFeatures):
-    # Group rare locations 
     location = features.location
     if location not in location_columns:
         location = "Other"
@@ -41,7 +60,6 @@ def predict_price(features: HouseFeatures):
     if f"loc_{location}" in loc_data:
         loc_data[f"loc_{location}"] = 1
 
-    # Numeric features
     numeric = pd.DataFrame([[
         features.bedrooms,
         features.bathrooms,
@@ -49,15 +67,8 @@ def predict_price(features: HouseFeatures):
         features.size_sqm
     ]], columns=['bedrooms', 'bathrooms', 'parking', 'size_sqm'])
 
-    # Standardize
-    numeric_scaled = pd.DataFrame(
-        scaler.transform(numeric),
-        columns=numeric.columns
-    )
-
-    # Combine numeric + location dummy vars
+    numeric_scaled = pd.DataFrame(scaler.transform(numeric), columns=numeric.columns)
     combined = pd.concat([numeric_scaled, pd.DataFrame([loc_data])], axis=1)
 
-    # Predict
     prediction = model.predict(combined)[0]
     return {"predicted_price": f"KES {prediction:,.0f}"}
