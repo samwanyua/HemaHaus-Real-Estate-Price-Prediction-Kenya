@@ -45,6 +45,7 @@ HemaHaus solves this by scraping real estate data, building machine learning mod
 - **Database**: PostgreSQL 
 - **ML Libraries**: Scikit-learn, Pandas, NumPy, XGBoost
 - **Data visualization**: Matplotlib, Plotly, Seaborn
+- **CI/CD**: Github Actions, Docker
 
 ---
 
