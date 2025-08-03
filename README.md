@@ -76,9 +76,9 @@ HemaHaus solves this by scraping real estate data, building machine learning mod
  │ Streamlit (frontend_app.py)│
  │  - User inputs location,   │
  │    house/land size, etc.   │
- │  - Calls FastAPI API        │
- │  - Displays prediction + map│
- └─────────────────────────────┘
+ │  - Calls FastAPI API       │
+ │  - Displays prediction     │
+ └────────────────────────────┘
               ↓
        [User Feedback Loop]
 ```
