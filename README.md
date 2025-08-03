@@ -55,7 +55,7 @@ HemaHaus solves this by scraping real estate data, building machine learning mod
         [Real Estate Sites]
               ↓
        ┌────────────┐
-       │ Scraper.py │ ───→ Clean + Format → Geo-tag → Save to disk
+       │ Scraper.py │ ───→ Clean + Format → Geo-tag → Save to postgres db
        └────────────┘
               ↓
        [data.csv locally]
