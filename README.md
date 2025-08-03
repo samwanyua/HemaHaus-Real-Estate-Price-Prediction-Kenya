@@ -90,7 +90,7 @@ HemaHaus solves this by scraping real estate data, building machine learning mod
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/samwanyua/HemaHaus-Real-Estate-Price-Prediction-Kenya.git
-cd hemahaus
+cd HemaHaus-Real-Estate-Price-Prediction-Kenya
 ```
 
 ### 2. Create a virtual environment
