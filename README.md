@@ -61,10 +61,10 @@ HemaHaus solves this by scraping real estate data, building machine learning mod
        [data.csv locally]
               ↓
      ┌─────────────────┐
-     │ train_model.py  │ → Evaluate + Save → model.pkl → Save locally
+     │ train_model.py  │ → Evaluate + Save → model.pkl 
      └─────────────────┘
               ↓
-        [model.pkl locally]
+        [model.pkl ]
               ↓
  ┌─────────────────────────┐
  │  FastAPI (main.py)      │
