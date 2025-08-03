@@ -106,7 +106,7 @@ pip install -r requirements.txt
 
 ### 4. Run Streamlit frontend
 ```bash
-streamlit run frontend_app.py
+streamlit run frontend/frontend_app.py
 ```
 
 ### 5. Run FastAPI backend
