@@ -27,7 +27,7 @@ HemaHaus solves this by scraping real estate data, building machine learning mod
 - Serve the model using FastAPI as a REST API.
 - Build an interactive frontend using Streamlit for predictions.
 - Store data and models locally (initially) and on S3/Azure Blob storage when scaling.
-- Lay groundwork for scaling with PostgreSQL and cloud deployment.
+- Lay groundwork for scaling with PostgreSQL and cloud deployment - AWS.
 
 ---
 
