@@ -126,7 +126,7 @@ HemaHaus-Real-Estate-Price-Prediction-Kenya/
 ├── notebooks/             # EDA and training experiments
 ├── scraper/               # Scraping logic
 ├── api/                   # FastAPI backend
-├── app/                   # Streamlit frontend
+├── frontend/              # Streamlit frontend
 ├── requirements.txt
 └── README.md
 ```
