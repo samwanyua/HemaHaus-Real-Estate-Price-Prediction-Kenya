@@ -67,7 +67,7 @@ HemaHaus solves this by scraping real estate data, building machine learning mod
         [model.pkl ]
               ↓
  ┌─────────────────────────┐
- │  FastAPI (main.py)      │
+ │  FastAPI                │
  │  - Loads model          │
  │  - Predict endpoint     │
  └─────────────────────────┘
