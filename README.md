@@ -80,7 +80,7 @@ HemaHaus solves this by scraping real estate data, building machine learning mod
  │  - Displays prediction     │
  └────────────────────────────┘
               ↓
-       [User Feedback Loop]
+       
 ```
 
 ---
