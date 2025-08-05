@@ -77,7 +77,7 @@ HemaHaus solves this by scraping real estate data, building machine learning mod
  │  - User inputs location,   │
  │    house size, etc.   │
  │  - Calls FastAPI API       │
- │  - Displays prediction     │
+ │  - Displays Predicted Price     │
  └────────────────────────────┘
               ↓
        [User Feedback Loop]
