@@ -96,7 +96,7 @@ cd HemaHaus-Real-Estate-Price-Prediction-Kenya
 ### 2. Create a virtual environment
 ```bash
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source venv/bin/activate  
 ```
 
 ### 3. Install dependencies
